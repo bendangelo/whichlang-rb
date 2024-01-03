@@ -1,0 +1,16 @@
+default:
+  image: ruby:3.2.2
+
+  before_script:
+    - apt-get update && apt-get install -y clang
+    - gem update --system '3.4.22'
+    - gem install bundler -v 2.4.22
+    - gem install tomlrb
+    - bundle install
+    - curl https://sh.rustup.rs -sSf | sh -s -- -y
+
+test:
+  variables:
+    RB_SYS_FORCE_INSTALL_RUST_TOOLCHAIN: 'true'
+  script:
+    - source "$HOME/.cargo/env" && bundle exec rake test

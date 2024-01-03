@@ -1,0 +1,23 @@
+task :default do
+  cargo_exists = `cargo` rescue nil
+  if cargo_exists
+    sh "cargo build --release"
+  else
+    fail <<EOS
+Rust environment is required to install this gem.
+
+For Unix like system, run
+
+    % curl https://sh.rustup.rs -sSf | sh
+
+For Windows, download installer from
+
+    https://static.rust-lang.org/rustup/dist/i686-pc-windows-gnu/rustup-init.exe
+
+See the Rust official page below for details
+
+    https://www.rust-lang.org/tools/install
+
+EOS
+  end
+end
