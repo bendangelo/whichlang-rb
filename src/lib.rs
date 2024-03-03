@@ -1,8 +1,8 @@
 use rutie::{
-    methods, module, AnyException, AnyObject, Module, NilClass, Object,
+    methods, module, AnyException, AnyObject, Module, Object,
     RString, VM,
 };
-use whichlang::{detect_language, Lang};
+use whichlang::{detect_language};
 
 module!(Whichlang);
 

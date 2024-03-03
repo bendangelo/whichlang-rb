@@ -7,7 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rutie = { git = "https://github.com/MelianLabs/rutie.git", branch = "segmentation_fault", features = ["no-link"] }
+rutie = { version = "0.9.0", features = ["no-link"] }
 whichlang = "0.1.0"
 
 [lib]
